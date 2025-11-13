@@ -1,16 +1,14 @@
 <script lang="ruby">
-    # Pound sign for comments since it treats it was Ruby.
-    # Doesn't recognize any variables without `$`? haven't tested much yet.
-    $name = "Ruby on Svelte"
+    require 'hello'
+    # @store $name
+
+    puts "Hello, #{$name}!"
 
     $count = 0
 
     def increment
         $count += 1
     end
-
-    # Does actually print to browser console/terminal.
-    puts "Hello, #{$name}!"
 </script>
 
 <main>
