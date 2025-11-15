@@ -1,0 +1,36 @@
+{
+    "name": "@ruby-on-svelte/adapter",
+    "version": "1.0.1",
+    "description": "Let's you use Ruby in Svelte",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "keywords": [
+        "ruby-on-svelte",
+        "ruby-on-svelte-adapter",
+        "ruby",
+        "svelte",
+        "sveltekit",
+        "sveltejs"
+    ],
+    "homepage": "https://github.com/Vallereya/ruby-on-svelte#readme",
+    "bugs": {
+        "url": "https://github.com/Vallereya/ruby-on-svelte/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Vallereya/ruby-on-svelte.git",
+        "directory": "@ruby-on-svelte-adapter/package"
+    },
+    "license": "MIT",
+    "author": "Vallereya",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "opal-compiler": "^3.0.0"
+    }
+}

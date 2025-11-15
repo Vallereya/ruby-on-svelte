@@ -1,0 +1,9 @@
+{
+	"name": "test",
+	"private": true,
+	"version": "1.0.0",
+    "author": "Vallereya <v@vallereya.com>",
+	"dependencies": {
+		"@ruby-on-svelte/adapter": "^1.0.0"
+	}
+}
