@@ -1,6 +1,6 @@
-import { CompileRuby } from '../proc/compiler.js';
-import { analyzeRubySource } from '../proc/analyze_ruby_source.js';
-import { buildRuntimeBridge } from '../proc/runtime_bridge.js';
+import { CompileRuby } from './proc/compiler.js';
+import { analyzeRubySource } from './proc/analyze_ruby_source.js';
+import { buildRuntimeBridge } from './proc/runtime_bridge.js';
 
 export function RubyOnSvelte(options = {}) {
     const { loadPaths } = options;

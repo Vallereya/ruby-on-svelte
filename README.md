@@ -22,24 +22,31 @@ I decided since there's interest, I'm going to build this out into an actual Rub
 - Also since it isn't natively supported if you use something like VSCode then your IDE will probably yell at you. 
 
 ## 🎯 Overall Goals:
-- Ruby in script tags.
-- Ruby that transpiles to Ruby via opal.
-- Returned back to Svelte in something it can read.
-- Support .rb files including server side; ex: `+page.server.rb`.
-- Publish as `npm` package.
-- Compile to wasm?
-- Allow usage of RubyGems?
+- [X] Ruby in script tags.
+- [X] Ruby that transpiles to Ruby via opal.
+- [X] Returned back to Svelte in something it can read.
+- [X] Publish as `npm` package.
+- [ ] Support .rb files including server side; ex: `+page.server.rb`.
+- [ ] Compile to wasm?
+- [ ] Allow usage of RubyGems?
 
 ## 📋 Recent Changelog
-✅ Ruby in script tags: `<script lang="ruby">` and `<script lang="rb">` are supported. <br>
-✅ Ruby transpiles to JavaScript via Opal, then is returned back for the Svelte compiler. <br>
-✅ Two-way store sync, doing anything that's changes in Ruby by Svelte updates and vise versa. <br>
-✅ Handles non-browser env slightly better. <br>
-✅ JavaScript naming/collision handling slightly better. <br>
-✅ Added some error handling on Svelte side too. <br>
-✅ A bit of polish on the compiler. <br>
-✅ Better structure for future improvements. <br>
-✅ Beautified this `README.md` so its not basic af. <br>
+`v1.0.0`
+- [X] Had to reorganize folders.
+- [X] Published npm package; `npm install @ruby-on-svelte/adapter`.
+- [X] Added `@ruby-on-svelte-adapter` folder, this is the actual npm package that is published.
+- [X] The `@ruby-on-svelte` folder is what's being used in this template.
+
+`init commit`
+- [X] Ruby in script tags: `<script lang="ruby">` and `<script lang="rb">` are supported. <br>
+- [X] Ruby transpiles to JavaScript via Opal, then is returned back for the Svelte compiler. <br>
+- [X] Two-way store sync, doing anything that's changes in Ruby by Svelte updates and vise versa. <br>
+- [X] Handles non-browser env slightly better. <br>
+- [X] JavaScript naming/collision handling slightly better. <br>
+- [X] Added some error handling on Svelte side too. <br>
+- [X] A bit of polish on the compiler. <br>
+- [X] Better structure for future improvements. <br>
+- [X] Beautified this `README.md` so its not basic af. <br>
 
 ## ⚙️ Setup Example Project
 ###### Excluding the `./@ruby-on-svelte` folder the rest of this is just a minimal starter template using `npx sv create` and is a `sveltejs/adapter-node`.
@@ -65,10 +72,26 @@ tailwindcss/forms
 tailwindcss/typography
 ```
 
+## ⚡ Install via npm:
+1. Install with npm: `npm i @ruby-on-svelte/adapter` *(adds this and the opal-compiler)*
+2. In your `svelte.config.js` file add this as a preprocess *(the import needs to be wherever you put the folder)* and I'm not sure yet if it matters where you put it in the preprocess list:
+
+```js
+import { RubyOnSvelte } from '@ruby-on-svelte/adapter';
+...
+const config = {
+	preprocess: [
+        ...
+        RubyOnSvelte()
+    ],
+...
+};
+```
+
 ## ✨ To add to your existing project:
 1. Install `opal-compiler` via `npm` (or `pnpm install` or `yarn`).
 2. Put `./@ruby-on-svelte` wherever you want.
-3. In your `svelte.config.js` file add this as a preprocess *(the import needs to be wherever you put the folder)* and I'm not sure yet if it matters where you put it in the preprocess list:
+3. And again, in your `svelte.config.js` file add this as a preprocess *(the import needs to be wherever you put the folder)* and I'm not sure yet if it matters where you put it in the preprocess list:
 
 ```js
 import { RubyOnSvelte } from './@ruby-on-svelte/adapter/index.js';
@@ -82,7 +105,7 @@ const config = {
 };
 ```
 
-## ℹ️ Example Usage
+## ⭐ Example Usage
 ```sh
 <script lang="ruby">
     # Pound sign for comments since it treats it was Ruby.

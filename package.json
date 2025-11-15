@@ -1,7 +1,9 @@
 {
-	"name": "ruby-on-svelte-webtest",
+	"name": "ruby-on-svelte",
+    "description": "Let's you use Ruby in Svelte! ",
 	"private": true,
-	"version": "0.0.1",
+	"version": "1.0.0",
+    "author": "Vallereya <v@vallereya.com>",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
